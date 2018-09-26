@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { LoadGuardService } from './load-guard.service';
+import { InformationService } from './information.service';
 
-describe('LoadGuardService', () => {
+describe('InformationService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [HttpClientModule]
     }));
 
   it('should be created', () => {
-    const service: LoadGuardService = TestBed.get(LoadGuardService);
+    const service: InformationService = TestBed.get(InformationService);
     expect(service).toBeTruthy();
   });
 });

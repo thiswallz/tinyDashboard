@@ -44,6 +44,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "husky": "^0.14.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
     "jasmine-core": "~2.99.1",

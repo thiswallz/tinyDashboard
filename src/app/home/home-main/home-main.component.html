@@ -11,19 +11,19 @@
      <div class="capacity">
        <div class="capacity-title">
          <span>Current capacity</span>
-         <div class="lds-hourglass" *ngIf="loadingGauge"></div>
+         <div class="lds-hourglass" *ngIf="true"></div>
        </div>
        <div class="chart-box">
-         <app-dashboard-gauge #gauge></app-dashboard-gauge>
+         chart
        </div>
      </div>
      <div class="overview">
        <div class="overview-title">
          <span>Overview</span>
-         <div class="lds-hourglass" *ngIf="loadingLine"></div>
+         <div class="lds-hourglass" *ngIf="true"></div>
        </div>
        <div class="chart-box">
-         <app-dashboard-line #line></app-dashboard-line>
+         chart
        </div>
      </div>
     </div>
@@ -32,42 +32,39 @@
         class="forecast-details-boxes" 
         [ngStyle]="{'min-height': !forecastChartView ? '100%' : '340px' }">
        <div class="forecast-title">
-         Forecast details 
+         Grid details 
          <div class="btn-group">
            <button 
-             [class.btn-choice-active]="!forecastChartView"
-             (click)="forecastChartView = false" class="btn-choice left">
+             [class.btn-choice-active]="!chartView"
+             (click)="chartView = false" class="btn-choice left">
             table view
            </button>
            <button 
-             [class.btn-choice-active]="forecastChartView"
-             (click)="forecastChartView = true" class="btn-choice right">
+             [class.btn-choice-active]="chartView"
+             (click)="chartView = true" class="btn-choice right">
             chart view
            </button>
          </div>
        </div>
        <div
-         [hidden]="!forecastChartView"
+         [hidden]="!chartView"
          class="chart-box">
-         <app-home-forecast-chart 
-           #forecast>
-         </app-home-forecast-chart>
+         chart
        </div>
        <app-home-grid-detail 
-         [hidden]="forecastChartView"
-         [columns]="['Time','Time Frame','Forecast', 'Max value risk',  'Threshold risk']"
-         [data]="dataForecast"
+         [hidden]="chartView"
+         [columns]="['Time','Group','Order', 'Price',  'Date']"
+         [data]="orders"
          >
        </app-home-grid-detail>
       </div>
       <div class="ht-calendar-boxes">
-        <div class="ht-title">HT Calendar {{this.hvm?.year}}</div>
-        <app-home-httime [data]="dataHt"> </app-home-httime>
+        <div class="ht-title">Extra data</div>
       </div>
     </div>
     <div class="footer">
-      RWE Supply & Trading GmbH <br/>
-      Altenessener Str. 27, 45141 Essen
+      Tiny Dashboard<br/>
+      Using Angular 6 and Sass (no ui frameworks)
     </div>
   </div>
 </div>

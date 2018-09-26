@@ -7,8 +7,6 @@ import { HomeBoxComponent } from './home-box/home-box.component';
 import { HomeGridDetailComponent } from './home-grid-detail/home-grid-detail.component';
 import { DashboardModule } from 'src/app/dashboard/dashboard.module';
 import { HomeSidebarComponent } from './home-sidebar/home-sidebar.component';
-import { HomeHttimeComponent } from './home-httime/home-httime.component';
-import { HomeForecastChartComponent } from './home-forecast-chart/home-forecast-chart.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, DashboardModule],
@@ -17,9 +15,7 @@ import { HomeForecastChartComponent } from './home-forecast-chart/home-forecast-
     HomeHeaderComponent,
     HomeBoxComponent,
     HomeGridDetailComponent,
-    HomeSidebarComponent,
-    HomeHttimeComponent,
-    HomeForecastChartComponent
+    HomeSidebarComponent
   ],
   exports: [HomeMainComponent]
 })
