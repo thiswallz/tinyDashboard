@@ -11,10 +11,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Responsive, no bootstrap, no material, just 1kb of CSS
 
 ### Desktop
-![Alt text](demo2.png?raw=true "Demo 1")
+![Alt text](demo2.PNG?raw=true "Demo 1")
 
 ### Mobile
-![Alt text](demo1.png?raw=true "Demo 2")
+![Alt text](demo1.PNG?raw=true "Demo 2")
 
 ## Commands 
 
