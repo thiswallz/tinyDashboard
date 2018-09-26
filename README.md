@@ -90,6 +90,7 @@ We use hooks to prevent some behaviors, they are as follows:
 ### TODO List
 
 - [ ] sidebar menu 
+- [ ] put how to change the theme into the readme file
 
 ### Author(s), maintainers and contributors
 
