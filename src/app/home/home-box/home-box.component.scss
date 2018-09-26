@@ -1,0 +1,62 @@
+@import 'src/app/style.config.scss';
+
+.box {
+  margin: 5px;
+  margin-top: 10px;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  border: 1px solid #e6e6e6;
+  border-left: 4px solid #e6e6e6;
+  position: relative;
+  box-sizing: border-box;
+  height: 50px;
+  font-size: 14px;
+  background-color: white;
+  span {
+  }
+  &:hover {
+    /*
+    border: 1px solid rgba(0, 42, 255, 0.36);
+    border-left: 4px solid rgba(0, 42, 255, 0.36);
+    & .material-icons {
+      color: rgba(0, 42, 255, 0.76);
+    }
+    & ::ng-deep .period-item {
+      background-color: rgba(0, 42, 255, 0.76);
+    }
+    */
+  }
+}
+
+.icon {
+  position: absolute;
+  top: -8px;
+  left: -10px;
+}
+
+.material-icons {
+  color: #545454;
+  width: 21px;
+  height: 21px;
+  font-size: 21px;
+}
+
+.title {
+  position: absolute;
+  left: 20px;
+  top: 2px;
+  color: #44b4e3;
+}
+
+.data {
+  position: absolute;
+  top: 22px;
+  left: 0px;
+  width: 100%;
+  color: $bg-theme;
+  font-size: 14px;
+  .content-data {
+    padding-left: 20px;
+  }
+}

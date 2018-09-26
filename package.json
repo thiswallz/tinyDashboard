@@ -7,7 +7,17 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postrelease": "ng build --prod && npm run pushtags",
+    "pushtags": "git push --follow-tags origin master",
+    "commitmsg": "commitlint -E GIT_PARAMS",
+    "release": "npm run bump",
+    "release:patch": "npm run bump -- --prerelease",
+    "precommit": "pretty-quick --staged",
+    "__prepush": "npm run lint && npm run test topgunUI",
+    "stats": "webpack-bundle-analyzer ./dist/loadguard/stats.json",
+    "build:prod": "ng build --prod --build-optimizer",
+    "bump": "standard-version --no-verify"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +32,7 @@
     "@angular/router": "^6.1.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.2.0",
+    "rxjs-compat": "~6.2.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -31,6 +42,8 @@
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
     "jasmine-core": "~2.99.1",
@@ -43,6 +56,9 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~2.9.2"
+    "typescript": "~2.9.2",
+    "prettier": "1.13.6",
+    "pretty-quick": "^1.6.0",
+    "standard-version": "^4.4.0"
   }
 }

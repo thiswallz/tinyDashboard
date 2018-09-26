@@ -1,0 +1,64 @@
+@import 'src/app/style.config.scss';
+
+.container {
+  width: 100%;
+  overflow-y: auto;
+  max-height: 340px;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0px;
+  border-collapse: separate;
+  font-size: 13px;
+  padding: 8px;
+}
+
+tr:first-child {
+  height: 35px;
+  > th {
+    background-color: $bg-theme;
+    border: 0px solid #000000;
+  }
+  > th:first-child {
+    border-radius: 10px 0px 0px 0px;
+    -moz-border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
+  }
+  > th:last-child {
+    border-radius: 0px 10px 0px 0px;
+    -moz-border-radius: 0px 10px 0px 0px;
+    -webkit-border-radius: 0px 10px 0px 0px;
+  }
+}
+
+tr:not(:first-child):nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+tr:not(:first-child):nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tr:not(:first-child):hover {
+  background-color: #cae8ff;
+}
+
+th {
+  color: white;
+  font-weight: 100;
+  font-size: 14px;
+}
+td:first-child {
+  color: #4b9fd5;
+}
+td {
+  padding: 7px;
+  color: darken($default-color, 10%);
+  &:last-child {
+    border-right: none;
+  }
+  &:first-child {
+    border-left: none;
+  }
+}

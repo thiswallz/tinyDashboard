@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+//@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'src/app/style.config.scss';
+
+body,
+html {
+  font-family: 'Roboto';
+  margin: 0px;
+  background-color: #f3f3f3;
+}
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  z-index: 999999;
+}
+.lds-hourglass:after {
+  content: ' ';
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 6px;
+  box-sizing: border-box;
+  border: 12px solid #b5b5b5;
+  border-color: $loading-color-u transparent $loading-color-d transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+  margin-right: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #585858;
+}

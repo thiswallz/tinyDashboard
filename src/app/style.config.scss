@@ -1,0 +1,47 @@
+$main-color: #0090ff;
+$bg-default-color: #eceff1;
+$default-color: #848484;
+$hover-bg-color: #ff4a68;
+$warning-color: #ff5722;
+$bg-theme: #263238;
+
+$loading-color-u: #0190ff;
+$loading-color-d: #65bcff;
+
+$sphone-width: 468px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin sphone {
+  @media (min-width: #{$sphone-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin mgrid($columns, $ie-columns, $gap: 7px, $row-height: 75px) {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: $ie-columns;
+  grid-template-columns: $columns;
+  -ms-grid-gap: $gap;
+  grid-gap: $gap;
+  box-sizing: border-box;
+  grid-auto-rows: $row-height;
+}
+
+@mixin ie-row-column($row, $column: 1) {
+  -ms-grid-row: $row;
+  -ms-grid-column: $column;
+}

@@ -1,0 +1,37 @@
+<div class="container">
+  <app-home-box title="Summer" icon="wb_sunny" class="summer" *ngIf="data['summer']">
+    <ng-container 
+      [ngTemplateOutlet]="periodTmp" 
+      [ngTemplateOutletContext]="{data:data['summer']}">
+    </ng-container>
+  </app-home-box> 
+
+  <app-home-box title="Autumn" icon="spa" class="autumn" *ngIf="data['autumn']">
+    <ng-container 
+      [ngTemplateOutlet]="periodTmp" 
+      [ngTemplateOutletContext]="{data:data['autumn']}">
+    </ng-container>
+  </app-home-box> 
+
+  <app-home-box title="Winter" icon="ac_unit" class="winter" *ngIf="data['winter']">
+    <ng-container 
+      [ngTemplateOutlet]="periodTmp" 
+      [ngTemplateOutletContext]="{data:data['winter']}">
+    </ng-container>
+  </app-home-box> 
+
+  <app-home-box title="Spring" icon="local_florist" class="spring" *ngIf="data['spring']">
+    <ng-container 
+      [ngTemplateOutlet]="periodTmp" 
+      [ngTemplateOutletContext]="{data:data['spring']}">
+    </ng-container>
+ </app-home-box> 
+</div>
+ <ng-template #periodTmp let-data='data'>
+  <div class="period" >
+      <div *ngFor="let period of data; let i=index" class="period-item">
+        <span>{{period}}</span>
+      </div>
+  </div>
+</ng-template>
+

@@ -1,0 +1,92 @@
+@import 'src/app/style.config.scss';
+
+$autumn-color: #da4b15;
+$summer-color: #ffbc00;
+$winter-color: #65bcff;
+$spring-color: #22d820;
+
+.summer {
+  & ::ng-deep .material-icons {
+    color: $summer-color;
+  }
+  & ::ng-deep .title {
+    color: $bg-theme;
+  }
+  & .period-item {
+    background-color: $summer-color;
+  }
+}
+
+.winter {
+  & ::ng-deep .material-icons {
+    color: $winter-color;
+  }
+  & ::ng-deep .title {
+    color: $bg-theme;
+  }
+  & .period-item {
+    background-color: $winter-color;
+  }
+}
+
+.spring {
+  & ::ng-deep .material-icons {
+    color: $spring-color;
+  }
+  & ::ng-deep .title {
+    color: $bg-theme;
+  }
+  & .period-item {
+    background-color: $spring-color;
+  }
+}
+.autumn {
+  & ::ng-deep .material-icons {
+    color: $autumn-color;
+  }
+  & ::ng-deep .title {
+    color: $bg-theme;
+  }
+  & .period-item {
+    background-color: $autumn-color;
+  }
+}
+
+.period {
+  position: absolute;
+  right: -8px;
+  width: 100px;
+  text-align: right;
+}
+
+.period-item {
+  position: relative;
+  color: white;
+  font-size: 12px;
+  height: 18px;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border: 0px solid #fff;
+  margin-top: 2px;
+  > span {
+    position: absolute;
+    left: 18px;
+    top: 2px;
+  }
+}
+
+.container {
+  &::ng-deep .data {
+    position: relative;
+    top: -6px;
+    left: 0px;
+  }
+  &::ng-deep .box {
+    background-color: #fff;
+    margin-top: 15px;
+  }
+  &::ng-deep .title {
+    top: 15px;
+  }
+}

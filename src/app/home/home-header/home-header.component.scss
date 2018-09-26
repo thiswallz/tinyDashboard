@@ -1,0 +1,163 @@
+@import 'src/app/style.config.scss';
+
+.home-top {
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  box-sizing: border-box;
+  padding: 13px;
+  background-color: $bg-theme;
+  align-items: center;
+  height: 35px;
+  &.second {
+    display: flex;
+    padding: 1px;
+    .home-location {
+      display: block;
+      select {
+        width: 220px;
+      }
+    }
+    @include tablet() {
+      display: none;
+      .home-location {
+        display: none;
+      }
+    }
+    @include desktop() {
+      display: none;
+      .home-location {
+        display: none;
+      }
+    }
+    top: 35px;
+    .home-location {
+      margin: auto;
+    }
+  }
+  > div {
+    box-sizing: border-box;
+    padding: 4px;
+  }
+}
+
+.separate {
+  margin-left: auto;
+}
+
+.home-location {
+  position: relative;
+}
+
+.home-logout {
+}
+
+.home-logo {
+  > i {
+    -webkit-animation: logo-animation 6s infinite; /* Safari 4.0 - 8.0 */
+    animation: logo-animation 6s infinite;
+    font-size: 1.7em;
+    padding-top: 3px;
+  }
+}
+
+.location-select {
+  cursor: pointer;
+  border-width: 0px;
+  border: 0px;
+  border-radius: 0;
+  outline: 0px;
+  width: 250px;
+  background: transparent;
+  color: white;
+  padding-left: 20px;
+  font-size: 0.9em;
+}
+.home-location,
+.home-title {
+  display: none;
+  @include tablet() {
+    display: block;
+  }
+  @include desktop() {
+    display: block;
+  }
+}
+
+option {
+  color: black;
+}
+
+.btn-logout {
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: $main-color;
+  border: none;
+  padding: 5px;
+  font-size: 0.8em;
+  color: white;
+  border-radius: 6px 6px 6px 6px;
+  margin-left: 20px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  border: 0px solid #000000;
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+}
+
+.material-icons.location {
+  font-size: 19px;
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  -webkit-animation: location-animation 2s infinite; /* Safari 4.0 - 8.0 */
+  animation: location-animation 2s infinite;
+}
+
+.user-name {
+  position: relative;
+  color: white;
+  width: 100px;
+  background-color: $bg-theme;
+  font-size: 12px;
+  border-radius: 0px 0px 0px 3px;
+  -moz-border-radius: 0px 0px 0px 3px;
+  -webkit-border-radius: 0px 0px 0px 3px;
+  padding: 0px;
+  i {
+    font-size: 18px;
+  }
+  span {
+    position: absolute;
+    top: 8px;
+    left: 30px;
+  }
+}
+
+/* Animations */
+@keyframes logo-animation {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #4a9fd5;
+  }
+  100% {
+    color: white;
+  }
+}
+@keyframes location-animation {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    color: white;
+  }
+}

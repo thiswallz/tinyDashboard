@@ -1,0 +1,42 @@
+<div class="home-top">
+  <div class="home-logo">
+    <i class="material-icons">
+    insert_chart_outlined
+    </i> 
+  </div>
+  <div class="home-title">LoadGuard</div>
+  <div class="separate"></div>
+  <ng-container 
+    [ngTemplateOutlet]="locationTmp">
+  </ng-container>
+  <div class="user-name">
+    <i class="material-icons">
+    person
+    </i>
+    <span>
+       Suadin C.
+    </span>
+  </div>
+  <div class="home-logout">
+    <button class="btn-logout"> Log out</button>
+  </div>
+</div>
+
+<div class="home-top second">
+  <ng-container 
+    [ngTemplateOutlet]="locationTmp">
+  </ng-container>
+</div>
+
+
+<ng-template #locationTmp >
+  <div class="home-location">
+    <i class="material-icons location">
+      my_location
+    </i>
+    <select class="location-select" [(ngModel)]="location" (ngModelChange)="onChangeLocation()">
+      <option *ngFor="let location of locations" [ngValue]="location">{{location.name}}</option>
+    </select>
+  </div>
+</ng-template>
+

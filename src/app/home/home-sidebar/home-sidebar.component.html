@@ -1,0 +1,43 @@
+<div class="container">
+  <app-home-box title="Time" icon="av_timer" [updated]="updated">
+     <app-dashboard-clock></app-dashboard-clock>
+     <div class="period" title="Last refresh" >
+       <div  class="period-item">
+         <i class="material-icons">
+          timer
+         </i>
+         <span>
+         {{vm?.currentTime}}
+         </span>
+       </div>
+       <div class="lds-hourglass" *ngIf="loadingBar"></div>
+    </div>
+  </app-home-box> 
+  <app-home-box title="Profile" icon="style">
+   {{vm?.profile}}
+   </app-home-box> 
+   <app-home-box title="Tariff" icon="title">
+   {{vm?.tariff}}
+   </app-home-box> 
+   <app-home-box title="Switch"  icon="compare_arrows">
+   {{vm?.leftTimeToSwitch}}
+   </app-home-box> 
+   <app-home-box title="Grid" icon="grid_on">
+   {{vm?.gridOperator}}
+   </app-home-box> 
+   <app-home-box title="Voltage Lvl" icon="flash_on">
+   {{vm?.voltageLevel}}
+   </app-home-box> 
+   <app-home-box title="Fee" icon="euro_symbol">
+   {{vm?.capacityCharges ? vm?.capacityCharges + " &#8364;/kWh" : ''}}
+   </app-home-box> 
+   <app-home-box title="Max Low" icon="trending_down">
+   {{vm?.maxLow}}
+   </app-home-box> 
+   <app-home-box title="Max High" icon="trending_up">
+   {{vm?.maxHigh}}
+   </app-home-box> 
+   <app-home-box title="Threshold"  icon="vertical_align_top">
+   {{vm?.threshold}}
+  </app-home-box> 
+</div>

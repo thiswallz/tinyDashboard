@@ -1,0 +1,71 @@
+@import 'src/app/style.config.scss';
+
+.period {
+  position: absolute;
+  right: -5px;
+  top: -18px;
+  width: 50px;
+  text-align: right;
+}
+
+.lds-hourglass {
+}
+
+.period-item {
+  position: relative;
+  background-color: #ff0101;
+  color: white;
+  font-size: 12px;
+  height: 18px;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border: 0px solid #fff;
+  margin-top: 2px;
+  > i {
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    font-size: 15px;
+  }
+  > span {
+    position: absolute;
+    left: 18px;
+    top: 3px;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  box-sizing: border-box;
+  @include tablet() {
+    @include mgrid(1fr, 1fr, 5px, 100%);
+  }
+  @include desktop() {
+    @include mgrid(1fr, 1fr, 5px, 100%);
+  }
+  &::ng-deep .data {
+  }
+  &::ng-deep .box {
+    background-color: #fff;
+    margin-top: 1px;
+  }
+}
+.lds-hourglass {
+  right: 9px;
+}
+
+.lds-hourglass:after {
+  content: ' ';
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 6px;
+  box-sizing: border-box;
+  border: 8px solid #b5b5b5;
+  border-color: #b5b5b5 transparent #b5b5b5 transparent;
+  animation: lds-hourglass 1.2s infinite;
+}

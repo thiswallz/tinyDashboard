@@ -1,0 +1,252 @@
+@import 'src/app/style.config.scss';
+
+%chart-b-container {
+  position: relative;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  position: relative;
+  box-sizing: border-box;
+  width: 98%;
+  height: 400px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+}
+
+%main-box-title {
+  border-radius: 6px 6px 0px 0px;
+  -moz-border-radius: 6px 6px 0px 0px;
+  -webkit-border-radius: 6px 6px 0px 0px;
+
+  width: 100%;
+  background-color: $bg-theme;
+  color: white;
+  padding-bottom: 6px;
+  padding-top: 5px;
+  & span {
+    font-size: 15px;
+    padding-left: 20px;
+  }
+}
+
+.home-container {
+  margin-top: 75px;
+  @include mgrid(1fr, 1fr, 5px, 100%);
+  @include tablet() {
+    margin-top: 45px;
+    @include mgrid(150px 1fr, 150px 1fr);
+  }
+  @include desktop() {
+    margin-top: 45px;
+    @include mgrid(150px 1fr, 150px 1fr);
+  }
+  padding: 5px;
+}
+
+.main {
+  @include ie-row-column(1, 2);
+}
+
+.side-bar {
+  @include ie-row-column(1);
+}
+
+.main-bar {
+  @include mgrid(1fr, 1fr, 1px);
+  @include sphone() {
+    @include mgrid(repeat(2, 50%), 50% 50%, 1px);
+    & app-home-box:not(:nth-child(n + 3)) {
+      & ::ng-deep .box {
+      }
+    }
+  }
+  @include desktop() {
+    @include mgrid(repeat(5, 20%), 20% 20% 20% 20% 20%, 1px);
+  }
+  > app-home-box {
+    float: left;
+    &:nth-child(1) {
+      @include ie-row-column(1);
+    }
+    &:nth-child(2) {
+      @include ie-row-column(2);
+      @include sphone() {
+        @include ie-row-column(1, 2);
+      }
+    }
+    &:nth-child(3) {
+      @include ie-row-column(3);
+      @include sphone() {
+        @include ie-row-column(2);
+      }
+      @include desktop() {
+        @include ie-row-column(1, 3);
+      }
+    }
+    &:nth-child(4) {
+      @include ie-row-column(4);
+      @include sphone() {
+        @include ie-row-column(2, 2);
+      }
+      @include desktop() {
+        @include ie-row-column(1, 4);
+      }
+    }
+    &:nth-child(5) {
+      @include ie-row-column(5);
+      @include sphone() {
+        @include ie-row-column(3, 1);
+      }
+      @include desktop() {
+        @include ie-row-column(1, 5);
+      }
+    }
+  }
+}
+
+.chart-box {
+  margin: auto;
+}
+
+.chart-container {
+  @include mgrid(1fr, 1fr, 7px, 400px);
+  @include desktop() {
+    @include mgrid(35% 1fr, 35% 65%, 7px, 400px);
+  }
+  margin-top: 10px;
+}
+
+.capacity {
+  @include ie-row-column(1);
+  @include desktop() {
+    @include ie-row-column(1);
+  }
+  @extend %chart-b-container;
+}
+
+.capacity-title {
+  @extend %main-box-title;
+}
+
+.overview-title {
+  @extend %main-box-title;
+}
+
+.overview {
+  @include ie-row-column(2);
+  @include desktop() {
+    @include ie-row-column(1, 2);
+  }
+  @extend %chart-b-container;
+}
+
+.details-container {
+  @include mgrid(1fr, 1fr, 7px, 100%);
+  @include desktop() {
+    @include mgrid(74% 1fr, 70% 30%, 7px, 100%);
+  }
+  margin-top: 10px;
+}
+
+.forecast-details {
+  @include ie-row-column(1);
+  @extend %chart-b-container;
+}
+
+.forecast-title {
+  @extend %main-box-title;
+  border-bottom: 2px solid #e6e6e6;
+  margin-bottom: 7px;
+  background-color: transparentize($bg-default-color, 0.7);
+  color: #676767;
+}
+
+.ht-calendar {
+  @include ie-row-column(2);
+  @include desktop() {
+    @include ie-row-column(1, 2);
+  }
+  @extend %chart-b-container;
+}
+
+.ht-title {
+  @extend %main-box-title;
+  border-bottom: 2px solid #e6e6e6;
+  margin-bottom: 7px;
+  background-color: transparentize($bg-default-color, 0.7);
+  color: #676767;
+}
+
+app-home-grid-detail {
+}
+
+.footer {
+  min-height: 60px;
+  padding: 10px;
+  line-height: 1.5;
+  border-top: 1px solid #e6e6e6;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+  color: #595959;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Sub elements */
+
+.lds-hourglass {
+  position: absolute;
+  right: 14px;
+  top: -2px;
+}
+
+.side-bar app-home-box:not(:first-child) {
+  > ::ng-deep .box {
+  }
+}
+
+.forecast-details-boxes {
+  height: 100%;
+  min-height: 340px;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: 320px;
+  margin-top: 20px;
+}
+.btn-choice {
+  border: 0px solid #e6e6e6;
+  padding: 3px 5px;
+  background-color: #797979;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  &.left {
+    border-radius: 3px 0px 0px 3px;
+    -moz-border-radius: 3px 0px 0px 3px;
+    -webkit-border-radius: 3px 0px 0px 3px;
+  }
+  &.right {
+    border-radius: 0px 3px 3px 0px;
+    -moz-border-radius: 0px 3px 3px 0px;
+    -webkit-border-radius: 0px 3px 3px 0px;
+  }
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    color: #65bcff;
+  }
+}
+.btn-choice-active {
+  background-color: $bg-theme;
+}
+
+.btn-group {
+  position: absolute;
+  padding: 3px;
+  right: 7px;
+  top: 6px;
+}

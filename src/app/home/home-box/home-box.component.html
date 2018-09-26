@@ -1,0 +1,14 @@
+<div class="box" (@logHero.done)="onAnimationEventDone($event)" [@logHero]="_updated"  
+>
+  <div class="icon">
+    <i class="material-icons">
+      {{icon}} 
+    </i> 
+  </div>
+  <div class="title">{{title}}</div>
+  <div class="data">
+    <div class="content-data">
+      <ng-content></ng-content>  
+    </div>
+  </div>
+</div>
