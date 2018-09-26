@@ -1,4 +1,10 @@
 vnote_backup_file_826537664 C:/MGIT/tinyDashboard/README.md
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+<a href="http://www.gnu.org/licenses/">
+    <img src="https://img.shields.io/badge/License-GNU-blue.svg?longCache=true"
+        alt="License">
+  </a>
 
 # TinyDashboard
 
@@ -11,26 +17,81 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Mobile
 ![Alt text](demo1.png?raw=true "Demo 2")
 
-## Development server
+## Commands 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Prerequisistes
 
-## Code scaffolding
+1. nodejs
+2. npm
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installing 
 
-## Build
+```sh
+npm i -g @angular/cli
+git clone ...
+cd tinyDashboard 
+npm i
+ng serve --port 4201
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Commit linter
 
-## Running unit tests
+there is a hook called commitlint to prevent incorrect messages in order to follow semver for angular.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Options available
 
-## Running end-to-end tests
+```json
+[
+  'build',
+  'ci',
+  'chore',
+  'docs',
+  'feat',
+  'fix',
+  'perf',
+  'refactor',
+  'revert',
+  'style',
+  'test'
+]
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+*Valid examples
 
-## Further help
+```sh
+git commit -am "chore: add a hook"
+git commit -am "test: add unit tests for grid panel"
+git commit -am "feat(core): change the way contract is displayed"
+git commit -am "fix: TOP-111 solve loop problem "
+git commit -am "feat: TOP-600 alternate bg colors"
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Build process 
+
+When we build an app, it will create a dist/ folder and inside of this our loadguard project
+
+```sh
+#test build
+ng build
+#prod build
+ng build --prod
+```
+
+
+### Npm hooks 
+
+We use hooks to prevent some behaviors, they are as follows: 
+
+- commit linter, it enforces correct messages in your commits ([Commit lint](https://github.com/marionebl/commitlint))
+- prepush, it run lint and tests before we push
+- prerelease, it is activated when we use npm run release, it will build an production artifact ([StandarVer](https://github.com/conventional-changelog/standard-version))
+- precommit, it is going to change your code if you are not following our clean-code rules. ([Prettier tool](https://github.com/prettier/prettier)) 
+
+
+### TODO List
+
+- [ ] sidebar menu 
+
+### Author(s), maintainers and contributors
+
+- **Mauricio Joost** - _Initial work_ - [Email](mauriciojoostwolff@gmail.com)
