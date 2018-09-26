@@ -17,7 +17,6 @@ export class HomeBoxComponent implements OnInit {
   }
   @Input()
   set updated(value: boolean) {
-    console.log('trugg', value);
     this._updated = value;
   }
 

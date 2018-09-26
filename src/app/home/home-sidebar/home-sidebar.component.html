@@ -7,37 +7,37 @@
           timer
          </i>
          <span>
-         {{vm?.currentTime}}
+          1 hour
          </span>
        </div>
-       <div class="lds-hourglass" *ngIf="loadingBar"></div>
+       <div class="lds-hourglass" *ngIf="loading"></div>
     </div>
   </app-home-box> 
   <app-home-box title="Profile" icon="style">
-   {{vm?.profile}}
+   AdmX
    </app-home-box> 
    <app-home-box title="Tariff" icon="title">
-   {{vm?.tariff}}
+   $100.99
    </app-home-box> 
-   <app-home-box title="Switch"  icon="compare_arrows">
-   {{vm?.leftTimeToSwitch}}
+   <app-home-box title="Last Tariff"  icon="compare_arrows">
+   $99.55
    </app-home-box> 
-   <app-home-box title="Grid" icon="grid_on">
-   {{vm?.gridOperator}}
+   <app-home-box title="External code" icon="grid_on">
+   AA999A09A9
    </app-home-box> 
-   <app-home-box title="Voltage Lvl" icon="flash_on">
-   {{vm?.voltageLevel}}
+   <app-home-box title="Internal code" icon="flash_on">
+  XJSKSK22222
    </app-home-box> 
    <app-home-box title="Fee" icon="euro_symbol">
-   {{vm?.capacityCharges ? vm?.capacityCharges + " &#8364;/kWh" : ''}}
+   $1.90
    </app-home-box> 
-   <app-home-box title="Max Low" icon="trending_down">
-   {{vm?.maxLow}}
+   <app-home-box title="Price" icon="trending_down">
+   $2.50
    </app-home-box> 
-   <app-home-box title="Max High" icon="trending_up">
-   {{vm?.maxHigh}}
+   <app-home-box title="Tax" icon="trending_up">
+   $0.025
    </app-home-box> 
    <app-home-box title="Threshold"  icon="vertical_align_top">
-   {{vm?.threshold}}
+   $0.043
   </app-home-box> 
 </div>

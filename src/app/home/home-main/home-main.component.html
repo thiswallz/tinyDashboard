@@ -14,7 +14,7 @@
          <div class="lds-hourglass" *ngIf="true"></div>
        </div>
        <div class="chart-box">
-         chart
+        <img src="assets/c2.png" style="max-width: 300px;"/>
        </div>
      </div>
      <div class="overview">
@@ -23,15 +23,15 @@
          <div class="lds-hourglass" *ngIf="true"></div>
        </div>
        <div class="chart-box">
-         chart
+         <img src="assets/c1.png" />
        </div>
      </div>
     </div>
     <div class="details-container">
       <div 
-        class="forecast-details-boxes" 
-        [ngStyle]="{'min-height': !forecastChartView ? '100%' : '340px' }">
-       <div class="forecast-title">
+        class="details-boxes" 
+       >
+       <div class="grid-title">
          Grid details 
          <div class="btn-group">
            <button 
@@ -49,7 +49,7 @@
        <div
          [hidden]="!chartView"
          class="chart-box">
-         chart
+         <img src="assets/c3.jpg" />
        </div>
        <app-home-grid-detail 
          [hidden]="chartView"
@@ -60,6 +60,18 @@
       </div>
       <div class="ht-calendar-boxes">
         <div class="ht-title">Extra data</div>
+        <app-home-box title="Poll" icon="poll">
+          30%
+        </app-home-box> 
+        <app-home-box title="Notifications" icon="notifications_none">
+          0
+        </app-home-box> 
+        <app-home-box title="Business" icon="business_center">
+          Technology
+        </app-home-box> 
+        <app-home-box title="Private Line" icon="phone_locked">
+          +1 32123 432121
+        </app-home-box> 
       </div>
     </div>
     <div class="footer">

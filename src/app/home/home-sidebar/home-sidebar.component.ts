@@ -6,7 +6,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
   styleUrls: ['./home-sidebar.component.scss']
 })
 export class HomeSidebarComponent implements OnInit {
-  loading = false;
+  loading = true;
 
   constructor() {}
 

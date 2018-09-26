@@ -50,9 +50,11 @@
 
 .home-location {
   position: relative;
-}
-
-.home-logout {
+  font-size: 14px;
+  width: 200px;
+  span {
+    padding-left: 30px;
+  }
 }
 
 .home-logo {
@@ -64,18 +66,6 @@
   }
 }
 
-.location-select {
-  cursor: pointer;
-  border-width: 0px;
-  border: 0px;
-  border-radius: 0;
-  outline: 0px;
-  width: 250px;
-  background: transparent;
-  color: white;
-  padding-left: 20px;
-  font-size: 0.9em;
-}
 .home-location,
 .home-title {
   display: none;
@@ -112,7 +102,7 @@ option {
 .material-icons.location {
   font-size: 19px;
   position: absolute;
-  top: 6px;
+  top: 3px;
   left: 2px;
   -webkit-animation: location-animation 2s infinite; /* Safari 4.0 - 8.0 */
   animation: location-animation 2s infinite;

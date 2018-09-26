@@ -1,7 +1,7 @@
 <div class="home-top">
   <div class="home-logo">
     <i class="material-icons">
-    insert_chart_outlined
+      dashboard
     </i> 
   </div>
   <div class="home-title">TinyDashboard</div>
@@ -14,7 +14,7 @@
     person
     </i>
     <span>
-       Suadin C.
+       Joseph W.
     </span>
   </div>
   <div class="home-logout">
@@ -34,9 +34,7 @@
     <i class="material-icons location">
       my_location
     </i>
-    <select class="location-select" [(ngModel)]="location" (ngModelChange)="onChangeLocation()">
-      <option *ngFor="let location of locations" [ngValue]="location">{{location.name}}</option>
-    </select>
+    <span>Amsterdam</span>
   </div>
 </ng-template>
 

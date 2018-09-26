@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://localhost:5555/#/dashboard -->
+<html lang="en" class="gr__localhost"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>TinyDash</title>
+  <!--<base href="/">--><base href=".">
+<link href="./Amsterdam_files/icon" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="http://localhost:5555/favicon.png">
+<style type="text/css">
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+/* You can add global styles to this file, and also import other style files */
+body,
+html {
+  font-family: 'Roboto';
+  margin: 0px;
+  background-color: #f3f3f3; }
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  z-index: 999999; }
+.lds-hourglass:after {
+  content: ' ';
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 6px;
+  box-sizing: border-box;
+  border: 12px solid #b5b5b5;
+  border-color: #0190ff transparent #65bcff transparent;
+  -webkit-animation: lds-hourglass 1.2s infinite;
+          animation: lds-hourglass 1.2s infinite; }
+@-webkit-keyframes lds-hourglass {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  50% {
+    -webkit-transform: rotate(900deg);
+            transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  100% {
+    -webkit-transform: rotate(1800deg);
+            transform: rotate(1800deg); } }
+@keyframes lds-hourglass {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  50% {
+    -webkit-transform: rotate(900deg);
+            transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  100% {
+    -webkit-transform: rotate(1800deg);
+            transform: rotate(1800deg); } }
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+  margin-right: 20px;
+  padding: 20px;
+  margin: 20px; }
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px; }
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #585858; }
+</style><style></style><style>.capacity[_ngcontent-c1], .overview[_ngcontent-c1], .grid-details[_ngcontent-c1] {
+  position: relative;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  position: relative;
+  box-sizing: border-box;
+  width: 98%;
+  height: 400px;
+  background-color: white;
+  border: 1px solid #e6e6e6; }
+
+.capacity-title[_ngcontent-c1], .overview-title[_ngcontent-c1], .grid-title[_ngcontent-c1] {
+  border-radius: 6px 6px 0px 0px;
+  -moz-border-radius: 6px 6px 0px 0px;
+  -webkit-border-radius: 6px 6px 0px 0px;
+  width: 100%;
+  background-color: #263238;
+  color: white;
+  padding-bottom: 6px;
+  padding-top: 5px; }
+
+.capacity-title[_ngcontent-c1]   span[_ngcontent-c1], .overview-title[_ngcontent-c1]   span[_ngcontent-c1], .grid-title[_ngcontent-c1]   span[_ngcontent-c1] {
+    font-size: 15px;
+    padding-left: 20px; }
+
+.home-container[_ngcontent-c1] {
+  margin-top: 75px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-gap: 5px;
+  grid-gap: 5px;
+  box-sizing: border-box;
+  grid-auto-rows: 100%;
+  padding: 5px; }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .home-container[_ngcontent-c1] {
+      margin-top: 45px;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 150px 1fr;
+      grid-template-columns: 150px 1fr;
+      -ms-grid-gap: 7px;
+      grid-gap: 7px;
+      box-sizing: border-box;
+      grid-auto-rows: 75px; } }
+
+@media (min-width: 1024px) {
+    .home-container[_ngcontent-c1] {
+      margin-top: 45px;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 150px 1fr;
+      grid-template-columns: 150px 1fr;
+      -ms-grid-gap: 7px;
+      grid-gap: 7px;
+      box-sizing: border-box;
+      grid-auto-rows: 75px; } }
+
+.main[_ngcontent-c1] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2; }
+
+.side-bar[_ngcontent-c1] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1; }
+
+.main-bar[_ngcontent-c1] {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-gap: 1px;
+  grid-gap: 1px;
+  box-sizing: border-box;
+  grid-auto-rows: 75px; }
+
+@media (min-width: 468px) {
+    .main-bar[_ngcontent-c1] {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 50% 50%;
+      grid-template-columns: repeat(2, 50%);
+      -ms-grid-gap: 1px;
+      grid-gap: 1px;
+      box-sizing: border-box;
+      grid-auto-rows: 75px; } }
+
+@media (min-width: 1024px) {
+    .main-bar[_ngcontent-c1] {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 20% 20% 20% 20% 20%;
+      grid-template-columns: repeat(5, 20%);
+      -ms-grid-gap: 1px;
+      grid-gap: 1px;
+      box-sizing: border-box;
+      grid-auto-rows: 75px; } }
+
+.main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1] {
+    float: left; }
+
+.main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(1) {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1; }
+
+.main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(2) {
+      -ms-grid-row: 2;
+      -ms-grid-column: 1; }
+
+@media (min-width: 468px) {
+        .main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(2) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 2; } }
+
+.main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(3) {
+      -ms-grid-row: 3;
+      -ms-grid-column: 1; }
+
+@media (min-width: 468px) {
+        .main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(3) {
+          -ms-grid-row: 2;
+          -ms-grid-column: 1; } }
+
+@media (min-width: 1024px) {
+        .main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(3) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 3; } }
+
+.main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(4) {
+      -ms-grid-row: 4;
+      -ms-grid-column: 1; }
+
+@media (min-width: 468px) {
+        .main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(4) {
+          -ms-grid-row: 2;
+          -ms-grid-column: 2; } }
+
+@media (min-width: 1024px) {
+        .main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(4) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 4; } }
+
+.main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(5) {
+      -ms-grid-row: 5;
+      -ms-grid-column: 1; }
+
+@media (min-width: 468px) {
+        .main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(5) {
+          -ms-grid-row: 3;
+          -ms-grid-column: 1; } }
+
+@media (min-width: 1024px) {
+        .main-bar[_ngcontent-c1]    > app-home-box[_ngcontent-c1]:nth-child(5) {
+          -ms-grid-row: 1;
+          -ms-grid-column: 5; } }
+
+.chart-box[_ngcontent-c1] {
+  margin: auto; }
+
+.chart-container[_ngcontent-c1] {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-gap: 7px;
+  grid-gap: 7px;
+  box-sizing: border-box;
+  grid-auto-rows: 400px;
+  margin-top: 10px; }
+
+@media (min-width: 1024px) {
+    .chart-container[_ngcontent-c1] {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 35% 65%;
+      grid-template-columns: 35% 1fr;
+      -ms-grid-gap: 7px;
+      grid-gap: 7px;
+      box-sizing: border-box;
+      grid-auto-rows: 400px; } }
+
+.capacity[_ngcontent-c1] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1; }
+
+@media (min-width: 1024px) {
+    .capacity[_ngcontent-c1] {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1; } }
+
+.overview[_ngcontent-c1] {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1; }
+
+@media (min-width: 1024px) {
+    .overview[_ngcontent-c1] {
+      -ms-grid-row: 1;
+      -ms-grid-column: 2; } }
+
+.details-container[_ngcontent-c1] {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-gap: 7px;
+  grid-gap: 7px;
+  box-sizing: border-box;
+  grid-auto-rows: 100%;
+  margin-top: 10px; }
+
+@media (min-width: 1024px) {
+    .details-container[_ngcontent-c1] {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 70% 30%;
+      grid-template-columns: 74% 1fr;
+      -ms-grid-gap: 7px;
+      grid-gap: 7px;
+      box-sizing: border-box;
+      grid-auto-rows: 100%; } }
+
+.grid-details[_ngcontent-c1] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1; }
+
+.grid-title[_ngcontent-c1] {
+  border-bottom: 2px solid #e6e6e6;
+  margin-bottom: 7px;
+  background-color: rgba(236, 239, 241, 0.3);
+  color: #676767; }
+
+.footer[_ngcontent-c1] {
+  min-height: 60px;
+  padding: 10px;
+  line-height: 1.5;
+  border-top: 1px solid #e6e6e6;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+  color: #595959;
+  font-size: 12px;
+  text-align: center; }
+
+
+
+.lds-hourglass[_ngcontent-c1] {
+  position: absolute;
+  right: 14px;
+  top: -2px; }
+
+.details-boxes[_ngcontent-c1] {
+  height: 100%;
+  min-height: 340px;
+  position: relative; }
+
+img[_ngcontent-c1] {
+  width: 100%;
+  height: 320px;
+  margin-top: 20px; }
+
+.btn-choice[_ngcontent-c1] {
+  border: 0px solid #e6e6e6;
+  padding: 3px 5px;
+  background-color: #797979;
+  text-decoration: none;
+  color: white;
+  cursor: pointer; }
+
+.btn-choice.left[_ngcontent-c1] {
+    border-radius: 3px 0px 0px 3px;
+    -moz-border-radius: 3px 0px 0px 3px;
+    -webkit-border-radius: 3px 0px 0px 3px; }
+
+.btn-choice.right[_ngcontent-c1] {
+    border-radius: 0px 3px 3px 0px;
+    -moz-border-radius: 0px 3px 3px 0px;
+    -webkit-border-radius: 0px 3px 3px 0px; }
+
+.btn-choice[_ngcontent-c1]:focus {
+    outline: 0; }
+
+.btn-choice[_ngcontent-c1]:hover {
+    color: #65bcff; }
+
+.btn-choice-active[_ngcontent-c1] {
+  background-color: #263238; }
+
+.btn-group[_ngcontent-c1] {
+  position: absolute;
+  padding: 3px;
+  right: 7px;
+  top: 6px; }</style><style>.home-top[_ngcontent-c2] {
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  box-sizing: border-box;
+  padding: 13px;
+  background-color: #263238;
+  align-items: center;
+  height: 35px; }
+  .home-top.second[_ngcontent-c2] {
+    display: flex;
+    padding: 1px;
+    top: 35px; }
+  .home-top.second[_ngcontent-c2]   .home-location[_ngcontent-c2] {
+      display: block; }
+  .home-top.second[_ngcontent-c2]   .home-location[_ngcontent-c2]   select[_ngcontent-c2] {
+        width: 220px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+      .home-top.second[_ngcontent-c2] {
+        display: none; }
+        .home-top.second[_ngcontent-c2]   .home-location[_ngcontent-c2] {
+          display: none; } }
+  @media (min-width: 1024px) {
+      .home-top.second[_ngcontent-c2] {
+        display: none; }
+        .home-top.second[_ngcontent-c2]   .home-location[_ngcontent-c2] {
+          display: none; } }
+  .home-top.second[_ngcontent-c2]   .home-location[_ngcontent-c2] {
+      margin: auto; }
+  .home-top[_ngcontent-c2]    > div[_ngcontent-c2] {
+    box-sizing: border-box;
+    padding: 4px; }
+  .separate[_ngcontent-c2] {
+  margin-left: auto; }
+  .home-location[_ngcontent-c2] {
+  position: relative;
+  font-size: 14px; }
+  .home-logo[_ngcontent-c2]    > i[_ngcontent-c2] {
+  -webkit-animation: logo-animation 6s infinite;
+  
+  animation: logo-animation 6s infinite;
+  font-size: 1.7em;
+  padding-top: 3px; }
+  .location-select[_ngcontent-c2] {
+  cursor: pointer;
+  border-width: 0px;
+  border: 0px;
+  border-radius: 0;
+  outline: 0px;
+  width: 250px;
+  background: transparent;
+  color: white;
+  padding-left: 20px;
+  font-size: 0.9em; }
+  .home-location[_ngcontent-c2], .home-title[_ngcontent-c2] {
+  display: none; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .home-location[_ngcontent-c2], .home-title[_ngcontent-c2] {
+      display: block; } }
+  @media (min-width: 1024px) {
+    .home-location[_ngcontent-c2], .home-title[_ngcontent-c2] {
+      display: block; } }
+  option[_ngcontent-c2] {
+  color: black; }
+  .btn-logout[_ngcontent-c2] {
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #0090ff;
+  border: none;
+  padding: 5px;
+  font-size: 0.8em;
+  color: white;
+  border-radius: 6px 6px 6px 6px;
+  margin-left: 20px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  border: 0px solid #000000; }
+  .btn-logout[_ngcontent-c2]:hover {
+    background-color: #ff4a68; }
+  .material-icons.location[_ngcontent-c2] {
+  font-size: 19px;
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  -webkit-animation: location-animation 2s infinite;
+  
+  animation: location-animation 2s infinite; }
+  .user-name[_ngcontent-c2] {
+  position: relative;
+  color: white;
+  width: 100px;
+  background-color: #263238;
+  font-size: 12px;
+  border-radius: 0px 0px 0px 3px;
+  -moz-border-radius: 0px 0px 0px 3px;
+  -webkit-border-radius: 0px 0px 0px 3px;
+  padding: 0px; }
+  .user-name[_ngcontent-c2]   i[_ngcontent-c2] {
+    font-size: 18px; }
+  .user-name[_ngcontent-c2]   span[_ngcontent-c2] {
+    position: absolute;
+    top: 8px;
+    left: 30px; }
+  
+  @-webkit-keyframes logo-animation {
+  0% {
+    color: white; }
+  50% {
+    color: #4a9fd5; }
+  100% {
+    color: white; } }
+  @keyframes logo-animation {
+  0% {
+    color: white; }
+  50% {
+    color: #4a9fd5; }
+  100% {
+    color: white; } }
+  @-webkit-keyframes location-animation {
+  0% {
+    color: white; }
+  50% {
+    color: rgba(255, 255, 255, 0.5); }
+  100% {
+    color: white; } }
+  @keyframes location-animation {
+  0% {
+    color: white; }
+  50% {
+    color: rgba(255, 255, 255, 0.5); }
+  100% {
+    color: white; } }</style><style>.period[_ngcontent-c3] {
+  position: absolute;
+  right: -5px;
+  top: -18px;
+  width: 60px;
+  text-align: right; }
+
+.period-item[_ngcontent-c3] {
+  position: relative;
+  background-color: #ff0101;
+  color: white;
+  font-size: 12px;
+  height: 18px;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border: 0px solid #fff;
+  margin-top: 2px; }
+
+.period-item[_ngcontent-c3]    > i[_ngcontent-c3] {
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    font-size: 15px; }
+
+.period-item[_ngcontent-c3]    > span[_ngcontent-c3] {
+    position: absolute;
+    left: 18px;
+    top: 3px; }
+
+.container[_ngcontent-c3] {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  box-sizing: border-box; }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container[_ngcontent-c3] {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      -ms-grid-gap: 5px;
+      grid-gap: 5px;
+      box-sizing: border-box;
+      grid-auto-rows: 100%; } }
+
+@media (min-width: 1024px) {
+    .container[_ngcontent-c3] {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      -ms-grid-gap: 5px;
+      grid-gap: 5px;
+      box-sizing: border-box;
+      grid-auto-rows: 100%; } }
+
+.container[_ngcontent-c3]  .box {
+    background-color: #fff;
+    margin-top: 1px; }
+
+.lds-hourglass[_ngcontent-c3] {
+  right: 9px; }
+
+.lds-hourglass[_ngcontent-c3]:after {
+  content: ' ';
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 6px;
+  box-sizing: border-box;
+  border: 8px solid #b5b5b5;
+  border-color: #b5b5b5 transparent #b5b5b5 transparent;
+  -webkit-animation: lds-hourglass 1.2s infinite;
+          animation: lds-hourglass 1.2s infinite; }</style><style>.container[_ngcontent-c4] {
+  width: 100%;
+  overflow-y: auto;
+  max-height: 340px; }
+
+table[_ngcontent-c4] {
+  width: 100%;
+  border-spacing: 0px;
+  border-collapse: separate;
+  font-size: 13px;
+  padding: 8px; }
+
+tr[_ngcontent-c4]:first-child {
+  height: 35px; }
+
+tr[_ngcontent-c4]:first-child    > th[_ngcontent-c4] {
+    background-color: #263238;
+    border: 0px solid #000000; }
+
+tr[_ngcontent-c4]:first-child    > th[_ngcontent-c4]:first-child {
+    border-radius: 10px 0px 0px 0px;
+    -moz-border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px; }
+
+tr[_ngcontent-c4]:first-child    > th[_ngcontent-c4]:last-child {
+    border-radius: 0px 10px 0px 0px;
+    -moz-border-radius: 0px 10px 0px 0px;
+    -webkit-border-radius: 0px 10px 0px 0px; }
+
+tr[_ngcontent-c4]:not(:first-child):nth-child(even) {
+  background-color: #f3f3f3; }
+
+tr[_ngcontent-c4]:not(:first-child):nth-child(odd) {
+  background-color: #ffffff; }
+
+tr[_ngcontent-c4]:not(:first-child):hover {
+  background-color: #cae8ff; }
+
+th[_ngcontent-c4] {
+  color: white;
+  font-weight: 100;
+  font-size: 14px; }
+
+td[_ngcontent-c4]:first-child {
+  color: #4b9fd5; }
+
+td[_ngcontent-c4] {
+  padding: 7px;
+  color: #6b6a6a; }
+
+td[_ngcontent-c4]:last-child {
+    border-right: none; }
+
+td[_ngcontent-c4]:first-child {
+    border-left: none; }</style><style>.box[_ngcontent-c5] {
+  margin: 5px;
+  margin-top: 10px;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  border: 1px solid #e6e6e6;
+  border-left: 4px solid #e6e6e6;
+  position: relative;
+  box-sizing: border-box;
+  height: 50px;
+  font-size: 14px;
+  background-color: white; }
+  .box[_ngcontent-c5]:hover {
+     }
+  .icon[_ngcontent-c5] {
+  position: absolute;
+  top: -8px;
+  left: -10px; }
+  .material-icons[_ngcontent-c5] {
+  color: #545454;
+  width: 21px;
+  height: 21px;
+  font-size: 21px; }
+  .title[_ngcontent-c5] {
+  position: absolute;
+  left: 20px;
+  top: 2px;
+  color: #44b4e3; }
+  .data[_ngcontent-c5] {
+  position: absolute;
+  top: 22px;
+  left: 0px;
+  width: 100%;
+  color: #263238;
+  font-size: 14px; }
+  .data[_ngcontent-c5]   .content-data[_ngcontent-c5] {
+    padding-left: 20px; }</style></head>
+<body data-gr-c-s-loaded="true">
+  <app-root _nghost-c0="" ng-version="6.1.8"><router-outlet _ngcontent-c0=""></router-outlet><app-home-main _nghost-c1="" class="ng-star-inserted"><app-home-header _ngcontent-c1="" _nghost-c2=""><div _ngcontent-c2="" class="home-top"><div _ngcontent-c2="" class="home-logo"><i _ngcontent-c2="" class="material-icons"> insert_chart_outlined </i></div><div _ngcontent-c2="" class="home-title">TinyDashboard</div><div _ngcontent-c2="" class="separate"></div><!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><div _ngcontent-c2="" class="home-location ng-star-inserted" style="
+    width: 200px;
+"><i _ngcontent-c2="" class="material-icons location"> my_location </i> My location </div><div _ngcontent-c2="" class="user-name"><i _ngcontent-c2="" class="material-icons"> person </i><span _ngcontent-c2=""> Joseph W. </span></div><div _ngcontent-c2="" class="home-logout"><button _ngcontent-c2="" class="btn-logout"> Log out</button></div></div><div _ngcontent-c2="" class="home-top second"><!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><div _ngcontent-c2="" class="home-location ng-star-inserted"><i _ngcontent-c2="" class="material-icons location"> my_location </i> My location </div></div><!----></app-home-header><div _ngcontent-c1="" class="home-container"><div _ngcontent-c1="" class="side-bar"><app-home-sidebar _ngcontent-c1="" _nghost-c3=""><div _ngcontent-c3="" class="container"><app-home-box _ngcontent-c3="" icon="av_timer" title="Time" _nghost-c5="" class="ng-tns-c5-0" ng-reflect-title="Time" ng-reflect-icon="av_timer"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> av_timer </i></div><div _ngcontent-c5="" class="title">Time</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"><app-dashboard-clock _ngcontent-c3="" _nghost-c6=""><span _ngcontent-c6="" class="title" style="margin:0;">10:50:57</span></app-dashboard-clock><div _ngcontent-c3="" class="period" title="Last refresh"><div _ngcontent-c3="" class="period-item"><i _ngcontent-c3="" class="material-icons"> timer </i><span _ngcontent-c3=""> 1 hour </span></div><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div _ngcontent-c3="" class="lds-hourglass ng-star-inserted" style=""></div></div></div></div></div></app-home-box><app-home-box _ngcontent-c3="" icon="style" title="Profile" _nghost-c5="" class="ng-tns-c5-1" ng-reflect-title="Profile" ng-reflect-icon="style"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> style </i></div><div _ngcontent-c5="" class="title">Profile</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"> AdmX </div></div></div></app-home-box><app-home-box _ngcontent-c3="" icon="title" title="Tariff" _nghost-c5="" class="ng-tns-c5-2" ng-reflect-title="Tariff" ng-reflect-icon="title"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> title </i></div><div _ngcontent-c5="" class="title">Tariff</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"> $100.99 </div></div></div></app-home-box><app-home-box _ngcontent-c3="" icon="compare_arrows" title="Last Tariff" _nghost-c5="" class="ng-tns-c5-3" ng-reflect-title="Last Tariff" ng-reflect-icon="compare_arrows"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> compare_arrows </i></div><div _ngcontent-c5="" class="title">Last Tariff</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"> $99.55 </div></div></div></app-home-box><app-home-box _ngcontent-c3="" icon="grid_on" title="External code" _nghost-c5="" class="ng-tns-c5-4" ng-reflect-title="External code" ng-reflect-icon="grid_on"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> grid_on </i></div><div _ngcontent-c5="" class="title">External code</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"> AA999A09A9 </div></div></div></app-home-box><app-home-box _ngcontent-c3="" icon="flash_on" title="Internal code" _nghost-c5="" class="ng-tns-c5-5" ng-reflect-title="Internal code" ng-reflect-icon="flash_on"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> flash_on </i></div><div _ngcontent-c5="" class="title">Internal code</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"> XJSKSK22222 </div></div></div></app-home-box><app-home-box _ngcontent-c3="" icon="euro_symbol" title="Fee" _nghost-c5="" class="ng-tns-c5-6" ng-reflect-title="Fee" ng-reflect-icon="euro_symbol"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> euro_symbol </i></div><div _ngcontent-c5="" class="title">Fee</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"> $1.90 </div></div></div></app-home-box><app-home-box _ngcontent-c3="" icon="trending_down" title="Price" _nghost-c5="" class="ng-tns-c5-7" ng-reflect-title="Price" ng-reflect-icon="trending_down"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> trending_down </i></div><div _ngcontent-c5="" class="title">Price</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"> $2.50 </div></div></div></app-home-box><app-home-box _ngcontent-c3="" icon="trending_up" title="Tax" _nghost-c5="" class="ng-tns-c5-8" ng-reflect-title="Tax" ng-reflect-icon="trending_up"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> trending_up </i></div><div _ngcontent-c5="" class="title">Tax</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"> $0.025 </div></div></div></app-home-box><app-home-box _ngcontent-c3="" icon="vertical_align_top" title="Threshold" _nghost-c5="" class="ng-tns-c5-9" ng-reflect-title="Threshold" ng-reflect-icon="vertical_align_top"><div _ngcontent-c5="" class="box ng-trigger ng-trigger-logHero"><div _ngcontent-c5="" class="icon"><i _ngcontent-c5="" class="material-icons"> vertical_align_top </i></div><div _ngcontent-c5="" class="title">Threshold</div><div _ngcontent-c5="" class="data"><div _ngcontent-c5="" class="content-data"> $0.043 </div></div></div></app-home-box></div></app-home-sidebar></div><div _ngcontent-c1="" class="main"><div _ngcontent-c1="" class="main-bar"></div><div _ngcontent-c1="" class="chart-container"><div _ngcontent-c1="" class="capacity"><div _ngcontent-c1="" class="capacity-title"><span _ngcontent-c1="">Current capacity</span><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div _ngcontent-c1="" class="lds-hourglass ng-star-inserted"></div></div><div _ngcontent-c1="" class="chart-box"><img _ngcontent-c1="" src="./Amsterdam_files/c2.png"></div></div><div _ngcontent-c1="" class="overview"><div _ngcontent-c1="" class="overview-title"><span _ngcontent-c1="">Overview</span><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><div _ngcontent-c1="" class="lds-hourglass ng-star-inserted"></div></div><div _ngcontent-c1="" class="chart-box"><img _ngcontent-c1="" src="./Amsterdam_files/c1.png"></div></div></div><div _ngcontent-c1="" class="details-container"><div _ngcontent-c1="" class="details-boxes"><div _ngcontent-c1="" class="grid-title"> Grid details <div _ngcontent-c1="" class="btn-group"><button _ngcontent-c1="" class="btn-choice left btn-choice-active"> table view </button><button _ngcontent-c1="" class="btn-choice right"> chart view </button></div></div><div _ngcontent-c1="" class="chart-box" hidden=""><img _ngcontent-c1="" src="./Amsterdam_files/c3.jpg"></div><app-home-grid-detail _ngcontent-c1="" _nghost-c4="" ng-reflect-data="10:15,Other,33203111AXy,36.55," ng-reflect-columns="Time,Group,Order,Price,Date"><div _ngcontent-c4="" class="container"><table _ngcontent-c4=""><tbody _ngcontent-c4=""><tr _ngcontent-c4=""><!--bindings={
+  "ng-reflect-ng-for-of": "Time,Group,Order,Price,Date"
+}--><th _ngcontent-c4="" class="ng-star-inserted">Time</th><th _ngcontent-c4="" class="ng-star-inserted">Group</th><th _ngcontent-c4="" class="ng-star-inserted">Order</th><th _ngcontent-c4="" class="ng-star-inserted">Price</th><th _ngcontent-c4="" class="ng-star-inserted">Date</th></tr><!--bindings={
+  "ng-reflect-ng-for-of": "10:15,Other,33203111AXy,36.55,"
+}--><tr _ngcontent-c4="" class="ng-star-inserted"><!--bindings={
+  "ng-reflect-ng-for-of": "10:15,Other,33203111AXy,36.55,"
+}--><td _ngcontent-c4="" class="ng-star-inserted">10:15</td><td _ngcontent-c4="" class="ng-star-inserted">Other</td><td _ngcontent-c4="" class="ng-star-inserted">33203111AXy</td><td _ngcontent-c4="" class="ng-star-inserted">36.55</td><td _ngcontent-c4="" class="ng-star-inserted">28/09/2018</td></tr><tr _ngcontent-c4="" class="ng-star-inserted"><!--bindings={
+  "ng-reflect-ng-for-of": "10:18,Bikes,22418188,90,01/10/"
+}--><td _ngcontent-c4="" class="ng-star-inserted">10:18</td><td _ngcontent-c4="" class="ng-star-inserted">Bikes</td><td _ngcontent-c4="" class="ng-star-inserted">22418188</td><td _ngcontent-c4="" class="ng-star-inserted">90</td><td _ngcontent-c4="" class="ng-star-inserted">01/10/2018</td></tr><tr _ngcontent-c4="" class="ng-star-inserted"><!--bindings={
+  "ng-reflect-ng-for-of": "10:19,Technology,111001029,400"
+}--><td _ngcontent-c4="" class="ng-star-inserted">10:19</td><td _ngcontent-c4="" class="ng-star-inserted">Technology</td><td _ngcontent-c4="" class="ng-star-inserted">111001029</td><td _ngcontent-c4="" class="ng-star-inserted">400.99</td><td _ngcontent-c4="" class="ng-star-inserted">05/10/2018</td></tr><tr _ngcontent-c4="" class="ng-star-inserted"><!--bindings={
+  "ng-reflect-ng-for-of": "11:02,Technology,111001029,199"
+}--><td _ngcontent-c4="" class="ng-star-inserted">11:02</td><td _ngcontent-c4="" class="ng-star-inserted">Technology</td><td _ngcontent-c4="" class="ng-star-inserted">111001029</td><td _ngcontent-c4="" class="ng-star-inserted">199.89</td><td _ngcontent-c4="" class="ng-star-inserted">02/10/2018</td></tr><tr _ngcontent-c4="" class="ng-star-inserted"><!--bindings={
+  "ng-reflect-ng-for-of": "12:00,Other,4412343,4.41,30/09"
+}--><td _ngcontent-c4="" class="ng-star-inserted">12:00</td><td _ngcontent-c4="" class="ng-star-inserted">Other</td><td _ngcontent-c4="" class="ng-star-inserted">4412343</td><td _ngcontent-c4="" class="ng-star-inserted">4.41</td><td _ngcontent-c4="" class="ng-star-inserted">30/09/2018</td></tr><tr _ngcontent-c4="" class="ng-star-inserted"><!--bindings={
+  "ng-reflect-ng-for-of": "13:50,Sales,111001029,0.99,30/"
+}--><td _ngcontent-c4="" class="ng-star-inserted">13:50</td><td _ngcontent-c4="" class="ng-star-inserted">Sales</td><td _ngcontent-c4="" class="ng-star-inserted">111001029</td><td _ngcontent-c4="" class="ng-star-inserted">0.99</td><td _ngcontent-c4="" class="ng-star-inserted">30/09/2018</td></tr><tr _ngcontent-c4="" class="ng-star-inserted"><!--bindings={
+  "ng-reflect-ng-for-of": "16:30,Technology,889101098,60."
+}--><td _ngcontent-c4="" class="ng-star-inserted">16:30</td><td _ngcontent-c4="" class="ng-star-inserted">Technology</td><td _ngcontent-c4="" class="ng-star-inserted">889101098</td><td _ngcontent-c4="" class="ng-star-inserted">60.30</td><td _ngcontent-c4="" class="ng-star-inserted">27/09/2018</td></tr></tbody></table></div></app-home-grid-detail></div><div _ngcontent-c1="" class="ht-calendar-boxes"><div _ngcontent-c1="" class="ht-title">Extra data</div></div></div><div _ngcontent-c1="" class="footer"> Tiny Dashboard<br _ngcontent-c1=""> Using Angular 6 and Sass (no ui frameworks) </div></div></div></app-home-main></app-root>
+<script type="text/javascript" src="./Amsterdam_files/runtime.js.Download"></script><script type="text/javascript" src="./Amsterdam_files/polyfills.js.Download"></script><script type="text/javascript" src="./Amsterdam_files/styles.js.Download"></script><script type="text/javascript" src="./Amsterdam_files/vendor.js.Download"></script><script type="text/javascript" src="./Amsterdam_files/main.js.Download"></script>
+
+</body></html>
